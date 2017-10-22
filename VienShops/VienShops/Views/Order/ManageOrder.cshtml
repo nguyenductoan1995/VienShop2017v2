@@ -1,0 +1,67 @@
+﻿@model IEnumerable<VienShops.Models.DONHANG>
+
+@{
+    ViewBag.Title = "ManageOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color:white ">QUẢN LÝ ĐƠN HÀNG</h2>
+
+<table class="table" style="background-color:rgba(255,255,255,0.8)">
+	<tr>
+		<th>
+			Ngày mua hàng
+		</th>
+		<th>
+			Tình trạng
+		</th>
+		<th>
+			Chính sách vẫn chuyển
+		</th>
+		<th>
+			Ghi chú
+		</th>
+		<th>
+			Tổng tiền 
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model) {
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.NGAYMUAHANG)
+			</td>
+			<td>
+				@if (item.TINHTRANG == "1")
+				{
+					<p> Chưa giao</p>
+				}
+				@if (item.TINHTRANG == "2")
+				{
+					<p> Đang giao</p>
+				}
+				@if (item.TINHTRANG == "3")
+				{
+					<p>Đã giao</p>
+				}
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.CHINHSACHVANCHUYEN)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.GHICHU)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.TONGTIEN)
+			</td>
+			@*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+		</tr>
+	}
+
+</table>
+

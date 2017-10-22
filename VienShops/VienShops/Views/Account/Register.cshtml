@@ -1,0 +1,75 @@
+﻿@model VienShops.Models.RegisterViewModel
+@{
+	ViewBag.Title = "Register";
+}
+
+
+<div class="container_fullwidth">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="checkout-page">
+					<ol class="checkout-steps">
+						<li class="steps active">
+							<div class="step-description">
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<div class="run-customer">
+											<h3>
+												ĐĂNG KÝ TÀI KHOẢN
+											</h3>
+											@using (Html.BeginForm("Register", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+											{
+												@Html.AntiForgeryToken()
+												<form>
+													@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+													<div class="form-row">
+														@Html.LabelFor(m => m.Email, new { @class = " control-label" })
+														@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+														@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+													</div>
+													<div class="form-row">
+														@Html.LabelFor(m => m.FullName, new { @class = " control-label" })
+														@Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+														@Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+													</div>
+													<div class="form-row">
+														@Html.LabelFor(m => m.Password, new { @class = " control-label" })
+														@Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+														@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+													</div>
+													<div class="form-row">
+														@Html.LabelFor(m => m.ConfirmPassword, new { @class = " control-label" })
+														@Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+														@Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+													</div>
+													<div class="form-row">
+														@Html.LabelFor(m => m.Adress, new { @class = " control-label" })
+														@Html.TextBoxFor(m => m.Adress, new { @class = "form-control" })
+														@Html.ValidationMessageFor(m => m.Adress, "", new { @class = "text-danger" })
+													</div>
+
+													<input type="submit" value="Register" class="btn btn-default" />
+												</form>
+											}
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+		</div>
+	</div>
+</div>
+<div class="clearfix">
+</div>
+
+
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

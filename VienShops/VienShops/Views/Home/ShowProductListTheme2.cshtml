@@ -1,0 +1,177 @@
+﻿@using VienShops.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<SANPHAM>
+@{
+    ViewBag.Title = "ShowProductListTheme2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="row">
+            @Html.Action("MenuLeft", "Home")
+            <div class="col-md-9">
+                <div class="banner">
+                    <div class="bannerslide" id="bannerslide">
+                        <ul class="slides">
+                            <li>
+                                <a href="#">
+                                    <img src="~/images/banner-01.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="~/images/banner-02.jpg" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="products-list">
+                    <div class="toolbar">
+                        <div class="sorter">
+                            <div class="view-mode">
+                                <a href="#" class="list active">
+                                    List
+                                </a>
+                                <a href="@Url.Action("ShowProductList","Home",new {@id = @ViewBag.ID })" class="grid">
+                                    Grid
+                                </a>
+                            </div>
+                            @*<div class="sort-by">
+                                    Sort by :
+                                    <select name="">
+                                        <option value="Default" selected>
+                                            Default
+                                        </option>
+                                        <option value="Name">
+                                            Name
+                                        </option>
+                                        <option value="Price">
+                                            Price
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="limiter">
+                                    Show :
+                                    <select name="">
+                                        <option value="3" selected>
+                                            3
+                                        </option>
+                                        <option value="6">
+                                            6
+                                        </option>
+                                        <option value="9">
+                                            9
+                                        </option>
+                                    </select>
+                                </div>*@
+                        </div>
+                        <div class="pager">
+                            @Html.PagedListPager(Model, page => Url.Action("ShowProductListTheme2", new { page = page }))
+                        </div>
+                    </div>
+                    <ul class="products-listItem">
+                        @foreach (var item in Model)
+                        {
+
+                            <li class="products">
+                                <div class="offer">
+                                    New
+                                </div>
+                                <div class="thumbnail">
+                                    <a href="@Url.Action("Detail","Home", new { @id = item.MASP })">
+                                        <img src="~/images/products/large/@item.URL" alt="Product Name">
+                                    </a>
+                                </div>
+                                <div class="product-list-description">
+                                    <div class="productname">
+                                        @item.TENSP
+                                    </div>
+                                    @*<p>
+                                            <img src="images/star.png" alt="">
+                                        </p>*@
+                                    <p>
+                                        @item.MOTA
+                                    </p>
+                                    <div class="list_bottom">
+                                        <div class="price">
+                                            <span class="new_price">
+                                                @String.Format("{0:0,0}", item.GIA)
+                                                <sup>
+                                                    VND
+                                                </sup>
+                                            </span>
+                                            <span class="old_price">
+                                                450.00
+                                                <sup>
+                                                    VND
+                                                </sup>
+                                            </span>
+                                        </div>
+                                        <div class="button_group">
+                                            @using (Html.BeginForm("AddCart", "Cart", new { @sMaSP = @item.MASP, @sUrl = Request.Url.ToString() }))
+                                            {
+                                                <button class="button" type="submit">
+                                                    Thêm vào giỏ hàng
+                                                </button>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                    <div class="toolbar">
+                        <div class="sorter bottom">
+                            <div class="view-mode">
+                                <a href="#" class="list active">
+                                    List
+                                </a>
+                                <a href="@Url.Action("ShowProductList","Home",new {@id = @ViewBag.ID })" class="grid">
+                                    Grid
+                                </a>
+                            </div>
+                            @*<div class="sort-by">
+                                    Sort by :
+                                    <select name="">
+                                        <option value="Default" selected>
+                                            Default
+                                        </option>
+                                        <option value="Name">
+                                            Name
+                                        </option>
+                                        <option value="Price">
+                                            Price
+                                        </option>
+                                    </select>
+                                </div>*@
+                            @*<div class="limiter">
+                                    Show :
+                                    <select name="">
+                                        <option value="3" selected>
+                                            3
+                                        </option>
+                                        <option value="6">
+                                            6
+                                        </option>
+                                        <option value="9">
+                                            9
+                                        </option>
+                                    </select>
+                                </div>*@
+                        </div>
+                        <div class="pager">
+                            @Html.PagedListPager(Model, page => Url.Action("ShowProductListTheme2", new { page = page }))
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
+<div class="clearfix">
+</div>

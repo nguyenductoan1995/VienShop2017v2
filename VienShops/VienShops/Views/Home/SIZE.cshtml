@@ -1,0 +1,9 @@
+﻿@model IEnumerable<VienShops.Models.CHITIETSANPHAM>
+
+@foreach (var item in Model) {
+	<option>
+		@Html.DisplayFor(modelItem => item.SIZE)
+	</option>       
+           
+}
+

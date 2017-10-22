@@ -1,0 +1,19 @@
+﻿@foreach (var item in Model)
+{<div class="col-md-3 col-sm-6">
+        <div class="products">
+            <div class="offer">- %20</div>
+            <div class="thumbnail"><a href="@Url.Action("Detail","Home", new { @id = item.MASP })"><img src="~/images/products/large/@item.URL" alt="Product Name"></a></div>
+            <div class="productname">@item.TENSP</div>
+            <h4 class="price">@String.Format("{0:0,0}", @item.GIA)  VND</h4>
+            
+            <div class="button_group">
+                @using (Html.BeginForm("AddCart", "Cart", new { @sMaSP = @item.MASP, @sUrl = Request.Url.ToString() }))
+                {
+                    <button class="button add-cart" type="submit">Thêm vào giỏ hàng</button>
+                }
+                @*<button class="button compare" type="button"><i class="fa fa-exchange"></i></button>
+                <button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button>*@
+            </div>
+        </div>
+    </div>
+}

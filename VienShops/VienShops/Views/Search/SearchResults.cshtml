@@ -1,0 +1,126 @@
+﻿@using VienShops.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<SANPHAM>
+@{
+    ViewBag.Title = "SearchResults";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="row">
+            @Html.Action("MenuLeft", "Home")
+            <div class="col-md-9">
+                <div class="banner">
+                    <div class="bannerslide" id="bannerslide">
+                        <ul class="slides">
+                            <li>
+                                <a href="#">
+                                    <img src="~/images/banner-01.jpg" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="~/images/banner-02.jpg" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="products-grid">
+                    <div class="toolbar">
+                        <div class="sorter">
+                            <div class="view-mode">
+                                <div>
+                                    @ViewBag.Notification
+                                </div>
+                            </div>
+                            @*<div class="sort-by">
+                                    Sort by :
+                                    <select name="">
+                                        <option value="Default" selected>
+                                            Default
+                                        </option>
+                                        <option value="Name">
+                                            Name
+                                        </option>
+                                        <option value="Price">
+                                            Price
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="limiter">
+                                    Show :
+                                    <select name="">
+                                        <option value="3" selected>
+                                            3
+                                        </option>
+                                        <option value="6">
+                                            6
+                                        </option>
+                                        <option value="9">
+                                            9
+                                        </option>
+                                    </select>
+                                </div>*@
+                        </div>
+                        <div class="pager">
+                            @Html.PagedListPager(Model, page => Url.Action("SearchResults", new { page = page, @sKeyWord = ViewBag.KeyWord }))
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-4 col-sm-6">
+                                <div class="products">
+                                    <div class="offer">
+                                        New
+                                    </div>
+                                    <div class="thumbnail">
+                                        <a href="@Url.Action("Detail","Home", new { @id = item.MASP })">
+                                            <img src="~/images/products/small/@item.URL" alt="Product Name">
+                                        </a>
+                                    </div>
+                                    <div class="productname">
+                                        @item.TENSP
+                                    </div>
+                                    <h4 class="price">
+                                        @String.Format("{0:0,0}", item.GIA) VND
+                                    </h4>
+                                    <div class="button_group">
+                                        @using (Html.BeginForm("AddCart", "Cart", new { @sMaSP = @item.MASP, @sUrl = Request.Url.ToString() }))
+                                        {
+                                            <button class="button add-cart" type="submit">
+                                                Thêm vào giỏ hàng
+                                            </button>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                    <div class="toolbar">
+                        <div class="sorter bottom">
+
+                        </div>
+                        <div class="pager">
+							@Html.PagedListPager(Model, page => Url.Action("SearchResults", new { page = page, @sKeyWord = ViewBag.KeyWord }))
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
+<div class="clearfix">
+</div>

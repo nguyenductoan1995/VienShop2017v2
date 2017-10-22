@@ -1,0 +1,68 @@
+﻿@using VienShops.Models
+@model LoginViewModel
+
+@{
+	ViewBag.Title = "Login";
+
+}
+<div class="container_fullwidth">
+	<div class="container">
+
+		<div class="col-md-9">
+			<ol class="checkout-steps">
+				<li class="steps active">
+					<div class="step-description">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<div class="run-customer">
+									<h3>
+										ĐĂNG NHẬP 
+									</h3>
+									@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+									{
+										@Html.AntiForgeryToken()
+										<form>
+											@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+											<div class="form-row">
+												@Html.LabelFor(m => m.Email, new { @class = " control-label" })
+												@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+												@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+											</div>
+											<div class="form-row">
+												@Html.LabelFor(m => m.Password, new { @class = " control-label" })
+												@Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+												@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+											</div>
+												<div class="checkbox">
+													@Html.CheckBoxFor(m => m.RememberMe)
+													@Html.LabelFor(m => m.RememberMe)
+												</div>
+											<p class="forgoten">
+												<a href="@Url.Action("ForgotPassword","Account" )">
+													Forgoten your password?
+												</a>
+											</p>
+											<input type="submit" value="Log in" class="btn btn-default" />
+										</form>
+									}
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ol>
+		</div>
+	</div>
+</div>
+<div class="clearfix">
+</div>
+
+<div class="clearfix">
+</div>
+
+
+
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}
