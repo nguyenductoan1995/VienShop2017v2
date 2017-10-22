@@ -1,11 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VienShops" Class="DBVienShopsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=VienShops;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DefaultConnection" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-C1LG2VP;Initial Catalog=VienShops;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DefaultConnection" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[__MigrationHistory]" Member="__MigrationHistories">
     <Type Name="__MigrationHistory">
       <Column Name="MigrationId" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ContextKey" Type="System.String" DbType="NVarChar(300) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Model" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="ProductVersion" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SANPHAMKHUYENMAI" Member="SANPHAMKHUYENMAIs">
+    <Type Name="SANPHAMKHUYENMAI">
+      <Column Name="MASP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAKM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GIAMGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KHUYENMAI_SANPHAMKHUYENMAI" Member="KHUYENMAI" ThisKey="MAKM" OtherKey="MAKM" Type="KHUYENMAI" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="SANPHAM_SANPHAMKHUYENMAI" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.AspNetRoles" Member="AspNetRoles">
@@ -99,7 +109,7 @@
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="TONGTIEN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Association Name="DONHANG_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MADH" OtherKey="MADH" Type="CHITIETDONHANG" />
-      <Association Name="AspNetUser_DONHANG" Member="AspNetUser" ThisKey="Id" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" />
+      <Association Name="AspNetUser_DONHANG" Member="AspNetUser" ThisKey="Id" OtherKey="Id" Type="AspNetUser" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.KHUYENMAI" Member="KHUYENMAIs">
@@ -153,21 +163,11 @@
       <Column Name="URLCT2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="URLCT3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="HOT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SANPHAM_SANPHAMKHUYENMAI" Member="SANPHAMKHUYENMAIs" ThisKey="MASP" OtherKey="MASP" Type="SANPHAMKHUYENMAI" />
       <Association Name="SANPHAM_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MASP" OtherKey="MASP" Type="CHITIETDONHANG" />
       <Association Name="SANPHAM_CHITIETPHIEUNHAP" Member="CHITIETPHIEUNHAPs" ThisKey="MASP" OtherKey="MASP" Type="CHITIETPHIEUNHAP" />
       <Association Name="SANPHAM_CHITIETSANPHAM" Member="CHITIETSANPHAMs" ThisKey="MASP" OtherKey="MASP" Type="CHITIETSANPHAM" />
-      <Association Name="SANPHAM_SANPHAMKHUYENMAI" Member="SANPHAMKHUYENMAIs" ThisKey="MASP" OtherKey="MASP" Type="SANPHAMKHUYENMAI" />
       <Association Name="LOAISANPHAM_SANPHAM" Member="LOAISANPHAM" ThisKey="MALOAISP" OtherKey="MALOAISP" Type="LOAISANPHAM" IsForeignKey="true" DeleteRule="CASCADE" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SANPHAMKHUYENMAI" Member="SANPHAMKHUYENMAIs">
-    <Type Name="SANPHAMKHUYENMAI">
-      <Column Name="MASP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MAKM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MOTA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="GIAMGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="KHUYENMAI_SANPHAMKHUYENMAI" Member="KHUYENMAI" ThisKey="MAKM" OtherKey="MAKM" Type="KHUYENMAI" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="SANPHAM_SANPHAMKHUYENMAI" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>

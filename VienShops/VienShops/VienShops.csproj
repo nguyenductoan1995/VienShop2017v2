@@ -1310,6 +1310,9 @@
     <Content Include="plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="Models\DBVienShops.dbml.layout">
+      <DependentUpon>DBVienShops.dbml</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1405,9 +1408,6 @@
     <EmbeddedResource Include="Migrations\201710132158575_UpdateUser.resx">
       <DependentUpon>201710132158575_UpdateUser.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Models\DBVienShops.dbml.layout">
-      <DependentUpon>DBVienShops.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
