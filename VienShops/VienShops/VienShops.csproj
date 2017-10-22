@@ -1378,12 +1378,16 @@
     <Content Include="Views\Home\SIZE.cshtml" />
     <Content Include="Views\Home\extendProduct.cshtml" />
     <Content Include="Views\Search\SearchResults.cshtml" />
-    <Content Include="Views\Shared\_Admin.cshtml" />
-    <Content Include="Views\Admin\AdminHome.cshtml" />
     <Content Include="Views\Order\Order.cshtml" />
     <Content Include="Views\Order\InfoCart.cshtml" />
     <Content Include="Views\Order\ConfirmOrder.cshtml" />
     <Content Include="Views\Order\ManageOrder.cshtml" />
+    <Content Include="Views\Shared\_Admin.cshtml" />
+    <Content Include="Views\Admin\AddProductNew.cshtml" />
+    <Content Include="Views\Admin\AdminHome.cshtml" />
+    <Content Include="Views\Admin\DeleteProduct.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\Admin\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

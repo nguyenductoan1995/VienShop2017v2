@@ -1,8 +1,96 @@
-﻿
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model PagedList.PagedList<VienShops.Models.SANPHAM>
+
 @{
     ViewBag.Title = "AdminHome";
     Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
-<h2>AdminHome</h2>
+<p>
+    @Html.ActionLink("Thêm sản phẩm mới", "AddProductNew")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.First().MALOAISP)
+        </th>*@
+        <th>
+           TÊN SẢN PHẨM
+        </th>
+        <th>
+            GIÁ
+        </th>
+        <th>
+            MÔ TẢ
+        </th>
+        <th>
+            CHẤT LIỆU
+        </th>
+        <th>
+            URL HÌNH
+        </th>
+        <th>
+           URL CT(1)
+        </th>
+        <th>
+           URL CT(2)
+        </th>
+        <th>
+           URL CT(3)
+        </th>
+        <th>
+           HOT
+        </th>
+        <th></th>
+    </tr>
 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIA)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.MOTA)*@
+            @Html.Raw(item.MOTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHATLIEU)
+        </td>
+        <td>
+            <img src="~/images/products/small/@item.URL" alt="Product Name" height="120px" >
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URLCT1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URLCT2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.URLCT3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOT)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "EditProduct", new { @MaSP= item.MASP })
+            @Html.ActionLink("Xem chi tiết", "Details", new { id=item.MASP }) 
+            @Html.ActionLink("Xóa", "DeleteProduct", new { @MaSP = item.MASP })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="pager">
+    @Html.PagedListPager(Model, page => Url.Action("AdminHome", new { page = page }))
+</div>
+<style>
+    .pager {
+        float: right;
+        width: auto;
+        margin: 0;
+    }
+</style>
