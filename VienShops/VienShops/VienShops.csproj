@@ -1310,9 +1310,9 @@
     <Content Include="plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
-    <Content Include="Models\DBVienShops.dbml.layout">
+    <None Include="Models\DBVienShops.dbml.layout">
       <DependentUpon>DBVienShops.dbml</DependentUpon>
-    </Content>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1388,6 +1388,7 @@
     <Content Include="Views\Admin\DeleteProduct.cshtml" />
     <Content Include="Views\Admin\EditProduct.cshtml" />
     <Content Include="Views\Admin\Welcome.cshtml" />
+    <Content Include="Views\Admin\OrderManagement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

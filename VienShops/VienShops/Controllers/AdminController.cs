@@ -152,5 +152,32 @@ namespace VienShops.Controllers
             Db.SubmitChanges();
             return RedirectToAction("AdminHome","Admin");
         }
+        // Quản lý đơn hàng
+        public ActionResult OrderManagement()
+        {
+            //var entryPoint = (from ep in Db.AspNetUsers
+            //                  join e in Db.DONHANGs on ep.Id equals e.Id
+            //                  join t in Db.CHITIETDONHANGs on e.MADH equals t.MADH
+            //                  join h in Db.SANPHAMs on t.MASP equals h.MASP
+            //                  select new
+            //                  {
+            //                      Email = ep.Email,
+            //                      TinhTrang = e.TINHTRANG,
+            //                      SoLuong = t.SOLUONG,
+            //                      TenSanPham = h.TENSP
+            //                  }).ToList();
+            //var entryPoint = from p in Db.DONHANGs
+            //                         from od in Db.CHITIETDONHANGs
+            //                         from o in Db.SANPHAMs
+            //                         from n in Db.AspNetUsers
+            //                         where p.MADH == od.MADH && od.MASP == o.MASP && p.Id == n.Id
+            //                         select new 
+            //                         {
+            //                             TINHTRANG = p.TINHTRANG,
+            //                             TENSPg = o.TENSP,
+            //                             SOLUONGg = od.SOLUONG
+            //                         };
+            return View(Db.DONHANGs.ToList().OrderBy(n=>n.MADH));
+        }
     }
 }

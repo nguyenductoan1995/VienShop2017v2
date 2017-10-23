@@ -615,6 +615,12 @@ E:\Web\VienShops2017\VienShops\VienShops\obj\Debug\VienShops.csproj.GenerateReso
 E:\Web\VienShops2017\VienShops\VienShops\obj\Debug\VienShops.csproj.CoreCompileInputs.cache
 E:\Web\VienShops2017\VienShops\VienShops\obj\Debug\VienShops.dll
 E:\Web\VienShops2017\VienShops\VienShops\obj\Debug\VienShops.pdb
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\System.IO.Compression.dll
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\VBCSCompiler.exe
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\ApplicationInsights.config
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\csc.exe
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\csc.exe.config
@@ -623,13 +629,9 @@ C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\rosly
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\csi.exe.config
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\csi.rsp
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -639,7 +641,6 @@ C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\rosly
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\System.Diagnostics.Process.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\System.IO.Compression.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -662,11 +663,7 @@ C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\rosly
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\vbc.exe
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\vbc.exe.config
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\vbc.rsp
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\VBCSCompiler.exe
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\VienShops.dll.config
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\VienShops.dll
-C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\VienShops.pdb
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\Antlr3.Runtime.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\EntityFramework.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\EntityFramework.SqlServer.dll
@@ -740,3 +737,6 @@ C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\obj\Debug
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\obj\Debug\VienShops.csproj.GenerateResource.Cache
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\obj\Debug\VienShops.dll
 C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\obj\Debug\VienShops.pdb
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\VienShops.dll.config
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\VienShops.dll
+C:\Users\THOAILUN\Desktop\WorkingV2\VienShop2017v2\VienShops\VienShops\bin\VienShops.pdb
