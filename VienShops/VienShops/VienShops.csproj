@@ -1389,6 +1389,8 @@
     <Content Include="Views\Admin\EditProduct.cshtml" />
     <Content Include="Views\Admin\Welcome.cshtml" />
     <Content Include="Views\Admin\OrderManagement.cshtml" />
+    <Content Include="Views\Admin\EditState.cshtml" />
+    <Content Include="Views\Admin\DetailOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

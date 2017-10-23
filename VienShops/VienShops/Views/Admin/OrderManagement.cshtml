@@ -7,52 +7,55 @@
 
 <h2>Quản lý đơn hàng</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
-    <tr>
-        <th>
-           Email
-        </th>
-        <th>
-            Địa chỉ
-        </th>
-        <th>
-           Tình trạng
-        </th>
-        <th>
-           Ngày mua hàng
-        </th>
-        <th>
-            Tổng tiền
-        </th>
-        <th></th>
-    </tr>
+	<tr>
+		<th>
+			Tên khách hàng
+		</th>
+		<th>
+			Email
+		</th>
+		<th>
+			Địa chỉ
+		</th>
+		<th>
+			Tình trạng
+		</th>
+		<th>
+			Ngày mua hàng
+		</th>
+		<th>
+			Tổng tiền
+		</th>
+		<th></th>
+	</tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AspNetUser.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AspNetUser.Adress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TINHTRANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGAYMUAHANG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TONGTIEN)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+	<tr>
+		<td>
+			@Html.DisplayFor(modelItem => item.AspNetUser.FullName)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.AspNetUser.Email)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.AspNetUser.Adress)
+		</td>
+		<td>
+			@item.TINHTRANG
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.NGAYMUAHANG)
+		</td>
+		<td>
+			@String.Format("{0:0,0}",item.TONGTIEN)
+		</td>
+		<td>
+			@Html.ActionLink("Edit","EditState", new {MADH=item.MADH}) |
+			@Html.ActionLink("Details", "DetailOrder", new {MADH=item.MADH}) |
+			@*@Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})*@
+		</td>
+	</tr>
 }
 
 </table>

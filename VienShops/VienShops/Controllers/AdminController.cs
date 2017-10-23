@@ -7,19 +7,21 @@ using VienShops.Models;
 using PagedList;
 using PagedList.Mvc;
 using System.IO;
+using System.Web.UI.WebControls;
+
 namespace VienShops.Controllers
 {
     public class AdminController : Controller
     {
         DBVienShopsDataContext Db = new DBVienShopsDataContext();
-        
+        [Authorize]
         public ActionResult Welcome()
         {
             return View();
         }
-
-        // GET: Admin
-        public ActionResult AdminHome(int? page)
+	    [Authorize]
+		// GET: Admin
+		public ActionResult AdminHome(int? page)
         {
             int pageSize = 5;
             int pageNumber = (page ?? 1);
@@ -177,7 +179,33 @@ namespace VienShops.Controllers
             //                             TENSPg = o.TENSP,
             //                             SOLUONGg = od.SOLUONG
             //                         };
-            return View(Db.DONHANGs.ToList().OrderBy(n=>n.MADH));
+            return View(Db.DONHANGs.ToList().OrderByDescending(n=>n.MADH));
         }
+		[HttpGet]
+		public ActionResult EditState(int MADH)
+		{
+			var ddh = Db.DONHANGs.SingleOrDefault(n => n.MADH == MADH);
+			return View(ddh);
+		}
+		[Authorize]
+		[HttpPost]
+	    public ActionResult EditState(DONHANG dh)
+	    {
+		 //   var dh = Db.DONHANGs.SingleOrDefault(n => n.MADH == MADH);
+			DONHANG ddh = Db.DONHANGs.SingleOrDefault(n => n.MADH ==dh.MADH);
+		    ddh.TINHTRANG = dh.TINHTRANG;
+		    ddh.CHINHSACHVANCHUYEN = dh.CHINHSACHVANCHUYEN;
+		    ddh.GHICHU = dh.GHICHU;
+		    //Db.DONHANGs. (ddh);
+		    Db.SubmitChanges();
+			return RedirectToAction("OrderManagement","Admin");
+	    }
+		[HttpGet]
+		[Authorize]
+	    public ActionResult DetailOrder(int MADH)
+		{
+			var dh = Db.CHITIETDONHANGs.Where(m => m.MADH ==MADH).ToList();
+			return View(dh);
+		}
     }
 }

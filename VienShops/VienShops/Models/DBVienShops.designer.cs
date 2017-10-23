@@ -1231,6 +1231,8 @@ namespace VienShops.Models
 		
 		private string _Adress;
 		
+		private System.Nullable<bool> _Admin;
+		
 		private EntitySet<AspNetUserClaim> _AspNetUserClaims;
 		
 		private EntitySet<AspNetUserLogin> _AspNetUserLogins;
@@ -1271,6 +1273,8 @@ namespace VienShops.Models
     partial void OnFullNameChanged();
     partial void OnAdressChanging(string value);
     partial void OnAdressChanged();
+    partial void OnAdminChanging(System.Nullable<bool> value);
+    partial void OnAdminChanged();
     #endregion
 		
 		public AspNetUser()
@@ -1558,6 +1562,26 @@ namespace VienShops.Models
 					this._Adress = value;
 					this.SendPropertyChanged("Adress");
 					this.OnAdressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admin", DbType="Bit")]
+		public System.Nullable<bool> Admin
+		{
+			get
+			{
+				return this._Admin;
+			}
+			set
+			{
+				if ((this._Admin != value))
+				{
+					this.OnAdminChanging(value);
+					this.SendPropertyChanging();
+					this._Admin = value;
+					this.SendPropertyChanged("Admin");
+					this.OnAdminChanged();
 				}
 			}
 		}
@@ -2450,7 +2474,7 @@ namespace VienShops.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUser_DONHANG", Storage="_AspNetUser", ThisKey="Id", OtherKey="Id", IsForeignKey=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUser_DONHANG", Storage="_AspNetUser", ThisKey="Id", OtherKey="Id", IsForeignKey=true)]
 		public AspNetUser AspNetUser
 		{
 			get

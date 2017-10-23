@@ -49,6 +49,7 @@ namespace VienShops.Controllers
 				ctdh.MADH = ddh.MADH;
 				ctdh.MASP = item.sMaSP;
 				ctdh.SOLUONG = item.iSoLuong;
+				ctdh.THANHTIEN = Decimal.Parse(item.dThanhTien.ToString());
 				Db.CHITIETDONHANGs.InsertOnSubmit(ctdh);
 			}
 			Db.SubmitChanges();
@@ -71,6 +72,7 @@ namespace VienShops.Controllers
 		}
 
 		[HttpPost]
+		[Authorize]
 		public ActionResult Order(AspNetUser user)
 		{
 			//Còn nhìu nghi vấn 
@@ -87,19 +89,19 @@ namespace VienShops.Controllers
 			Db.SubmitChanges();
 			return Redirect("DatHang");
 		}
-
+		[Authorize]
 		public PartialViewResult InfoCart()
 		{
 			List<Cart> gh = LayGioHang();
 			ViewBag.TongTien = TongTien();
 			return PartialView(gh);
 		}
-
+		[Authorize]
 		public ActionResult ConfirmOrder()
 		{
 			return View();
 		}
-
+		[Authorize]
 	    public ActionResult ManageOrder()
 	    {
 		    var manager = Db.DONHANGs.Where(m => m.Id == User.Identity.GetUserId()).OrderByDescending(m=>m.NGAYMUAHANG).ToList();

@@ -1,7 +1,7 @@
 ﻿@foreach (var item in Model)
 {<div class="col-md-3 col-sm-6">
         <div class="products">
-            <div class="offer">- %20</div>
+            @*<div class="offer">- %20</div>*@
             <div class="thumbnail"><a href="@Url.Action("Detail","Home", new { @id = item.MASP })"><img src="~/images/products/large/@item.URL" alt="Product Name"></a></div>
             <div class="productname">@item.TENSP</div>
             <h4 class="price">@String.Format("{0:0,0}", @item.GIA)  VND</h4>
