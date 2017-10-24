@@ -33,7 +33,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.GIA)
+	        @*@Html.DisplayFor(model => model.GIA)*@
+			@String.Format("{0:0,0}",Model.GIA) VND
         </dd>
 
         <dt>

@@ -79,11 +79,11 @@
                         </div>
                         <hr class="border">
                         <div class="wided">
-                            <div class="qty">
+                            @*<div class="qty">
 								Số lượng:
 								<input type="number" min="1"/>
-                            </div>
-                            <div class="button_group">
+                            </div>*@
+                            <div >
                                   @using (Html.BeginForm("AddCart", "Cart", new { @sMaSP = @Model.MASP, @sUrl = Request.Url.ToString() }))
 								{
 									<button class="button add-cart" type="submit">Thêm vào giỏ hàng</button>
